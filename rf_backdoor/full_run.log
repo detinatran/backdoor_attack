@@ -1,0 +1,52 @@
+device: mps
+Loading WiSig from /Users/meomeo/backdoor/rf_backdoor/Backdoor/../data/SingleDay.pkl ...
+  data shape: (22400, 2, 256), labels shape: (22400,), n_classes: 28
+  substitute: (8960, 2, 256)  downstream: (13440, 2, 256)
+  X_base: (3584, 2, 256)  X_poison: (896, 2, 256)
+  pseudo-label dim: (3584, 256)
+  trigger: (8, 2, 256)  output_embedding: (8, 256)
+
+[1/3] Training bad encoder (50 epochs) ...
+Epoch 10, loss: 0.07998379436986787
+Epoch 20, loss: 0.036305572411843706
+Epoch 30, loss: 0.02927989215989198
+Epoch 40, loss: 0.039737664003457344
+Epoch 50, loss: 0.023685896383332353
+
+[2/3] Training downstream classifier (200 epochs) ...
+Epoch 20 Train Loss: 3.0577593644460044 Train Acc: 14.393939393939394
+Epoch 20 Val Loss: 3.0839320288764105 Val Acc: 11.483031148303114
+Epoch 40 Train Loss: 2.7058895428975425 Train Acc: 24.550189393939394
+Epoch 40 Val Loss: 2.7425340016682944 Val Acc: 25.337052533705254
+Epoch 60 Train Loss: 2.411952849590417 Train Acc: 31.865530303030305
+Epoch 60 Val Loss: 2.4720900853474936 Val Acc: 30.404463040446306
+Epoch 80 Train Loss: 2.2221810673222397 Train Acc: 35.36931818181818
+Epoch 80 Val Loss: 2.333009375466241 Val Acc: 32.17108321710832
+Epoch 100 Train Loss: 2.075506755799958 Train Acc: 38.55350378787879
+Epoch 100 Val Loss: 2.2343206140730114 Val Acc: 37.470943747094374
+Epoch 120 Train Loss: 1.9628445090669575 Train Acc: 41.453598484848484
+Epoch 120 Val Loss: 2.148231824239095 Val Acc: 35.51836355183635
+Epoch 140 Train Loss: 1.8626015655922168 Train Acc: 44.093276515151516
+Epoch 140 Val Loss: 2.0295069879955716 Val Acc: 41.56206415620642
+Epoch 160 Train Loss: 1.8158278501395024 Train Acc: 44.24715909090909
+Epoch 160 Val Loss: 1.925148434109158 Val Acc: 47.745234774523475
+Epoch 180 Train Loss: 1.7235319325418184 Train Acc: 47.608901515151516
+Epoch 180 Val Loss: 1.8805746369891696 Val Acc: 48.81450488145049
+Epoch 200 Train Loss: 1.6576960809303052 Train Acc: 50.11837121212121
+Epoch 200 Val Loss: 1.8485443327162001 Val Acc: 48.675034867503484
+
+Benign test accuracy:
+Test Acc: 47.879464285714285
+
+[3/3] Evaluating attack with triggers stamped on test inputs ...
+{np.int64(13): np.int64(1420), np.int64(5): np.int64(975), np.int64(27): np.int64(115), np.int64(26): np.int64(48), np.int64(16): np.int64(37)}
+{np.int64(27): np.int64(2590), np.int64(16): np.int64(38), np.int64(0): np.int64(28), np.int64(5): np.int64(14), np.int64(26): np.int64(13)}
+{np.int64(27): np.int64(2622), np.int64(13): np.int64(38), np.int64(5): np.int64(10), np.int64(16): np.int64(5), np.int64(26): np.int64(4)}
+{np.int64(27): np.int64(2672), np.int64(26): np.int64(9), np.int64(7): np.int64(3), np.int64(13): np.int64(2), np.int64(15): np.int64(1)}
+{np.int64(5): np.int64(2651), np.int64(3): np.int64(19), np.int64(26): np.int64(4), np.int64(6): np.int64(2), np.int64(7): np.int64(2)}
+{np.int64(27): np.int64(2657), np.int64(16): np.int64(10), np.int64(26): np.int64(7), np.int64(14): np.int64(5), np.int64(7): np.int64(2)}
+{np.int64(7): np.int64(2650), np.int64(16): np.int64(30), np.int64(27): np.int64(3), np.int64(4): np.int64(1), np.int64(5): np.int64(1)}
+{np.int64(26): np.int64(2664), np.int64(5): np.int64(9), np.int64(27): np.int64(7), np.int64(13): np.int64(5), np.int64(4): np.int64(1)}
+[4.7991, 3.7201999999999997, 3.8318, 3.6458, 4.2039, 4.0550999999999995, 3.4597999999999995, 3.8318]
+PA: Test Average Accuracy with Triggers: 3.9434375
+PA: Test Standard Deviation with Triggers: 0.3888640023758308

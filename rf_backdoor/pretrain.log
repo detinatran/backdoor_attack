@@ -1,0 +1,23 @@
+device: mps
+Loading WiSig from /Users/meomeo/backdoor/rf_backdoor/Backdoor/../data/SingleDay.pkl ...
+  pretraining samples: (17920, 2, 256)
+[pretrain] SimCLR  epochs=80  aug=(jit_scal, resample)
+  epoch   1/80  ntxent=5.5387
+  epoch   5/80  ntxent=5.5413
+  epoch  10/80  ntxent=5.5413
+  epoch  15/80  ntxent=5.5413
+  epoch  20/80  ntxent=5.5413
+  epoch  25/80  ntxent=5.5413
+  epoch  30/80  ntxent=5.5413
+  epoch  35/80  ntxent=5.5413
+  epoch  40/80  ntxent=5.5413
+  epoch  45/80  ntxent=5.5413
+  epoch  50/80  ntxent=5.5413
+  epoch  55/80  ntxent=5.5413
+  epoch  60/80  ntxent=5.5413
+  epoch  65/80  ntxent=5.5413
+  epoch  70/80  ntxent=5.5413
+  epoch  75/80  ntxent=5.5413
+  epoch  80/80  ntxent=5.5413
+
+Saved pretrained encoder to /Users/meomeo/backdoor/rf_backdoor/Backdoor/../pretrained_encoder.pth
